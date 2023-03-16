@@ -136,6 +136,7 @@ export async function genReleaseNote(options: ReleaseNoteOptions) {
       '--pretty=format:%h--%s--%an',
       `.changeset/${changeset.id}.md`,
     ]);
+    console.info('get commit info', stdout);
     const [id, message] = stdout.split('--');
     let commitObj: Commit = {
       id,
