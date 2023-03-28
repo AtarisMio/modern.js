@@ -74,6 +74,7 @@ export const build = async (
   });
 
   if (watch) {
+    // @ts-expect-error
     compiler.watch({}, err => {
       if (err) {
         logger.error(err);
